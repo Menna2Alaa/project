@@ -1,10 +1,10 @@
 import java.util.Scanner;
 public class Main {
-    String s1 = "Dangerous Zone";
-    String s2 = "Safe Zone";
+   static String s1 = "Dangerous Zone";
+    static String s2 = "Safe Zone";
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.print("Enter no of numbers");
+        System.out.println("Enter no of numbers");
         int j = in.nextInt();
         System.out.println("Enter numbers");
         int largest = Integer.MIN_VALUE;
@@ -12,6 +12,11 @@ public class Main {
         for (int i = 0; i < j; i++)
         {
             int x = in.nextInt();
+            if(i==0)
+            {
+                largest=x;
+                smallest=x;
+            }
             if (x > largest)
             {
                 largest = x;
@@ -21,16 +26,17 @@ public class Main {
                 smallest = x;
             }
         }
-        int difference = largest - smallest;
-        System.out.print("The Difference is :" + difference);
+        int difference=0;
+        difference = largest - smallest;
+        System.out.println("The Difference is :" + difference);
         boolean b=method(difference,largest);
         if(b==true)
         {
-            System.out.print("s1 :");
+            System.out.println(s1);
         }
         else
         {
-            System.out.print("s2 :");
+            System.out.print(s2);
         }
     }
 
