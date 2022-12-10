@@ -1,11 +1,6 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        method();
-    }
-
-    public static String method()
-    {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter no of numbers");
         int j = in.nextInt();
@@ -14,7 +9,6 @@ public class Main {
         int smallest = Integer.MAX_VALUE;
         String s1 = "Dangerous Zone";
         String s2 = "Safe Zone";
-        String s=" ";
         for (int i = 0; i < j; i++)
         {
             int x = in.nextInt();
@@ -29,14 +23,20 @@ public class Main {
         }
         int difference = largest - smallest;
         System.out.print("The Difference is :" + difference);
+        method(difference,largest);
+
+    }
+
+    public static boolean method(int difference , int largest)
+    {
+
         if (difference < (largest / 2))
         {
-            s=s1;
+          return true;
         }
-        else if (difference >= (largest / 2))
+        else
         {
-            s=s2;
+           return false;
         }
-        return s;
     }
 }
